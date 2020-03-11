@@ -2,8 +2,14 @@ def Add(number):
     if number is "":
         return 0
 
-    number = number.replace("\n",",")
-    number_in_list = number.split(",")
+    if number[0:2] == "//" and number[3] == "\n":
+        delimeter = number[2]
+        number = number[4:]
+    else:
+        delimeter = ","
+
+    number = number.replace("\n",delimeter)
+    number_in_list = number.split(delimeter)
     number_in_list = [int(i) for i in number_in_list]
 
     new_list = []

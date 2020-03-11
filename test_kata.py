@@ -26,3 +26,7 @@ def test_error_if_negative():
 
     with pytest.raises(ValueError, match=r"Negatives not allowed:-4,-5"):
         Add("2,-4,3,-5")
+
+def test_support_delimeters():
+    Add("//X\n1X2") == 3
+    Add("//%\n1%2%3") == 6
