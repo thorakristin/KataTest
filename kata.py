@@ -1,10 +1,8 @@
 def Add(number):
-    if len(number) == 1:
-        return int(number)
-
-    elif len(number) == 3:
-        num1, num2 = number.split(",")
-        return int(num1) + int(num2)
-        
-    else:
+    if number is "":
         return 0
+
+    number_in_list = number.split(",")
+    number_in_list = [int(i) for i in number_in_list]
+
+    return sum(number_in_list)
