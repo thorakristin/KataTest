@@ -15,3 +15,6 @@ def test_unknown_number():
 
 def test_handle_newline():
     assert Add("1\n2,3") == 6
+
+def test_ignore_over_1000():
+    assert Add("1001,2") == 2
