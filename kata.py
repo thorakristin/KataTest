@@ -11,4 +11,14 @@ def Add(number):
         if i <= 1000:
             new_list.append(i)
 
+    negative_str = ""
+    for i in new_list:
+        if i < 0:
+            negative_str += str(i)
+            negative_str += ","
+    negative_str.strip(",")
+
+    if len(negative_str) > 0:
+        raise ValueError("Negatives not allowed:"+negative_str)
+
     return sum(new_list)
